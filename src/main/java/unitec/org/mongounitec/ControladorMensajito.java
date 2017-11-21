@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class ControladorMensajito {
      @Autowired RepositorioMensajito repoMensa; 
     //Aquí a continuación van las cinco operaciones básicas con la entidad mensaje.
-    @RequestMapping(value="/buscar", method=RequestMethod.GET, headers = {"Accept=application/json"})
+    @RequestMapping(value="/{buscar}", method=RequestMethod.GET, headers = {"Accept=application/json"})
     
-    public ArrayList<Mensajito> obtenerMensajito(@PathVariable String id)throws Exception{
+    public ArrayList<Mensajito> obtenerMensajito(@PathVariable String buscar)throws Exception{
         return (ArrayList<Mensajito>) repoMensa.findAll();
     }
 }
